@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class ContactComponent {
 
+  formData = {
+    name: '',
+    email: '',
+    message: ''
+  };
+
+  submitForm(): void{
+    console.log(JSON.stringify(this.formData));
+    /* this.formData.name = '';
+    this.formData.email = '';
+    this.formData.message = ''; */
+  }
 }
