@@ -1,2 +1,15 @@
-<p>country-list</p>
-<!-- <app-country></app-country> -->
+<p>all countries</p>
+<div *ngIf="countries">
+            <div fxLayout="row wrap">
+            <div *ngFor="let country of countries" >
+                <mat-card style="max-width: 80px;">
+                    <a routerLink="/country-detail" [queryParams]="{ data: country.name.common }">
+                        <mat-card-content>
+                            <img alt="logo" src="{{country.flags.png}}" width="50px" height="50px">    
+                            <mat-card-header>{{ country.name.common }}</mat-card-header>
+                        </mat-card-content>
+                    </a>
+                </mat-card>
+            </div>
+        </div>
+    </div>

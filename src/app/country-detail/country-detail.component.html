@@ -1,1 +1,7 @@
 <p>country-detail</p>
+<button mat-button routerLink="/country-list">back</button>
+<div *ngIf="receivedCountryName">
+    <pre>
+        {{ receivedCountryName }}
+    </pre>
+</div>
