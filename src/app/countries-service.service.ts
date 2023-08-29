@@ -1,39 +1,30 @@
 import { Injectable } from '@angular/core';
 import jsonCountries from './countries.json';
+import { Country } from './country.interface';
 
-//TODO: remove duplicates
-export interface ICountry {
-  name: {
-    common: string;
-    official: string;
-  };
-  flags: {
-    png: string;
-  };
-}
 @Injectable({
   providedIn: 'root'
 })
 //TODO: change name
 export class CountriesServiceService {
-  countries: ICountry[] = jsonCountries;
+  countries: Country[] = jsonCountries;
 
   constructor() {
     this.sortCountriesByName();
   }
 
   //TODO: remove
-  getCountries(): ICountry[] {
+  getCountries(): Country[] {
     return this.countries;
   }
 
-  sortCountriesByName(): void {
+  private sortCountriesByName(): void {
     this.countries.sort((a,b) => {
       return a.name.common.localeCompare(b.name.common);
     })
   }
 
-  getCountryByName(name: string): ICountry | undefined{
+  getCountryByName(name: string): Country | undefined{
     return this.countries.find(country => country.name.common === name);
   }
 }

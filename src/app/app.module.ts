@@ -14,6 +14,9 @@ import { CountryDetailComponent } from './country-detail/country-detail.componen
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from  '@angular/common/http';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { HttpClientModule } from  '@angular/common/http';
     MatCardModule,
     FlexLayoutModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

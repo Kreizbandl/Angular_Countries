@@ -7,6 +7,7 @@ import { CountryDetailComponent } from './country-detail/country-detail.componen
 
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'country-list', component: CountryListComponent },

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CountriesServiceService } from '../countries-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 //TODO: remove duplicates
 export interface ICountry {
@@ -19,7 +20,7 @@ export interface ICountry {
 export class CountryListComponent implements OnInit{
   countries: ICountry[] = [];
 
-  constructor(private service: CountriesServiceService){
+  constructor(private router: ActivatedRoute, private service: CountriesServiceService){
   }
 
   ngOnInit(): void {
