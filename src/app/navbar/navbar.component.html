@@ -3,9 +3,10 @@
         <img alt="logo" src="assets/logo.png">    
     </a>
     <span class="navbar-spacer"></span>
-    <div>
-        <input>
-        <a mat-button routerLink="/country-list">alle Länder</a>
-        <a mat-button routerLink="/contact">Kontakt</a>
+    <div class="tabs">
+        <label for="search" style="font-size: medium;">Search: </label>
+        <input type="text" id="search" name="search">
+        <a mat-button routerLink="/country-list">All Countries</a>
+        <a mat-button routerLink="/contact">Contact</a>
     </div>
 </mat-toolbar>
