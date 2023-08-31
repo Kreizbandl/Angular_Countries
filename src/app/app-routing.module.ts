@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'country-list', component: CountryListComponent },
+  { path: 'country-list/:searchTerm', component: CountryListComponent },
   { path: 'country-detail', component: CountryDetailComponent },
 ];
 

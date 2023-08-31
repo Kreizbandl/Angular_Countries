@@ -1,19 +1,18 @@
-<h1>Alle Länder</h1>
+<h1>{{ showCountries }}</h1>
+
 <div *ngIf="countries">
-            <div fxLayout="row wrap">
-            <div *ngFor="let country of countries" >
-                <mat-card>
-                    <a routerLink="/country-detail" [queryParams]="{ data: country.name.common }">
+    <div fxLayout="row wrap">
+        <div *ngFor="let country of countries" >
+            <mat-card>
+                <a routerLink="/country-detail" [queryParams]="{ data: country.name.common }">
                     <mat-card-header>
-                        <mat-card-title>
-                                {{ country.name.common }}
-                        </mat-card-title>
+                        <mat-card-title>{{ country.name.common }}</mat-card-title>
                     </mat-card-header>
-                        <mat-card-content>
-                            <img alt="{{ country.flags.alt }}" src="{{ country.flags.png }}">    
-                        </mat-card-content>
-                    </a>
-                </mat-card>
-            </div>
+                    <mat-card-content>
+                        <img alt="{{ country.flags.alt }}" src="{{ country.flags.png }}">    
+                    </mat-card-content>
+                </a>
+            </mat-card>
         </div>
     </div>
+</div>

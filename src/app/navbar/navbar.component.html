@@ -1,12 +1,18 @@
 <mat-toolbar>
+    
     <a routerLink="/home">
         <img alt="logo" src="assets/logo.png">    
     </a>
+    
     <span class="navbar-spacer"></span>
+    
     <div class="tabs">
         <label for="search">Search: </label>
-        <input type="text" id="search" name="search">
+        <input type="text" id="search" name="search" [(ngModel)]="searchTerm">
+        <a mat-button (click)="goToCountriesList()">Search</a>
+        
         <a mat-button routerLink="/country-list">All Countries</a>
         <a mat-button routerLink="/contact">Contact</a>
     </div>
+
 </mat-toolbar>
