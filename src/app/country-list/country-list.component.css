@@ -1,5 +1,7 @@
 mat-card{
     margin: 0.5em;
+    width: 200px; 
+    height: auto;
 }
 a {
     color: #000000;
@@ -10,4 +12,8 @@ mat-card-title {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+img {
+    width: auto;
+    height: 80px;
 }

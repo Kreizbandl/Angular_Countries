@@ -11,3 +11,6 @@ mat-toolbar{
 .tabs a {
     margin-left: 1em;
 }
+label {
+    font-size: medium;
+}
