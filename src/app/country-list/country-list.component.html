@@ -1,8 +1,10 @@
 <h1>{{ showCountries }}</h1>
 
 <div *ngIf="countries">
+
     <div fxLayout="row wrap">
         <div *ngFor="let country of countries" >
+            
             <mat-card>
                 <a routerLink="/country-detail" [queryParams]="{ data: country.name.common }">
                     <mat-card-header>
@@ -13,6 +15,8 @@
                     </mat-card-content>
                 </a>
             </mat-card>
+            
         </div>
     </div>
+
 </div>

@@ -8,9 +8,14 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  
   searchTerm: string = '';
 
-  constructor(private route: ActivatedRoute, private router: Router, private service: CountriesServiceService){}
+  constructor(
+    private route: ActivatedRoute, 
+    private router: Router, 
+    private service: CountriesServiceService
+  ){}
 
   goToCountriesList(): void {
     if(this.searchTerm !== ''){
@@ -18,4 +23,5 @@ export class NavbarComponent {
       this.router.navigate(['/country-list', this.searchTerm]);
     }
   }
+
 }

@@ -1,6 +1,7 @@
-<!-- <button mat-button routerLink="/country-list">back</button> -->
 <div *ngIf="country">
+
     <h1>{{ country.name.common }}</h1>
     <img alt="{{ country.flags.alt }}" src="{{ country.flags.png }}">
     <p>Population: {{ country.population }}</p>
+
 </div>

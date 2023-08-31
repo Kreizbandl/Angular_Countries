@@ -9,6 +9,7 @@ import { Country } from '../country.interface';
   styleUrls: ['./country-list.component.css']
 })
 export class CountryListComponent implements OnInit{
+  
   countries: Country[] = [];
   searchTerm: string | null | undefined = null;
   showCountries: string = '';
