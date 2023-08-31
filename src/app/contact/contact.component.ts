@@ -13,10 +13,7 @@ export class ContactComponent {
     message: ''
   };
 
-  submitForm(): void{
+  submit(): void{
     console.log(JSON.stringify(this.formData));
-    /* this.formData.name = '';
-    this.formData.email = '';
-    this.formData.message = ''; */
   }
 }

@@ -5,6 +5,7 @@ export interface Country {
     };
     flags: {
       png: string;
+      alt?: string;
     };
     /* languages: {
         de: "German"
