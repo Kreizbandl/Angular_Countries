@@ -9,6 +9,7 @@
     <div class="tabs">
         <label for="search">Search: </label>
         <input type="text" id="search" name="search" [(ngModel)]="searchTerm">
+        <!-- TODO: button focusable and with keydown event (eslint) -->
         <a mat-button (click)="goToCountriesList()">Search</a>
         
         <a mat-button routerLink="/country-list">All Countries</a>

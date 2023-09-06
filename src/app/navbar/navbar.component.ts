@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class NavbarComponent {
   
-  searchTerm: string = '';
+  searchTerm = '';
 
   constructor(
     private route: ActivatedRoute, 

@@ -12,7 +12,7 @@ export class CountryListComponent implements OnInit{
   
   countries: Country[] = [];
   searchTerm: string | null | undefined = null;
-  showCountries: string = '';
+  showCountries = '';
 
   constructor(
     private router: ActivatedRoute, 
