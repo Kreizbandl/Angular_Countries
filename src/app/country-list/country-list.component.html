@@ -6,7 +6,7 @@
         <div *ngFor="let country of countries" >
             
             <mat-card>
-                <a routerLink="/country-detail" [queryParams]="{ data: country.name.common }">
+                <a routerLink="/country-detail" [queryParams]="{ data: country.name.common }" attr.aria-label="Got to detail screen of {{ country.name.common }}">
                     <mat-card-header>
                         <mat-card-title>{{ country.name.common }}</mat-card-title>
                     </mat-card-header>

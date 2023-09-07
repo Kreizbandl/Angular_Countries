@@ -1,17 +1,25 @@
 <mat-toolbar>
     
-    <a routerLink="/home">
-        <img alt="logo" src="assets/logo.png">    
+    <a routerLink="/home" aria-label="Go to home screen">
+        <img alt="Logo of the website all-countries" src="assets/logo.png">    
     </a>
     
     <span class="navbar-spacer"></span>
     
     <div class="tabs">
-        <input type="text" id="search" name="search" placeholder="Search..." [(ngModel)]="searchTerm" aria-label="search" (keydown.enter)="goToCountriesList()">
-        <button mat-button (click)="goToCountriesList()" tabindex="0">Search</button>
+        <input 
+            type="text" 
+            id="search" 
+            name="search" 
+            placeholder="Search..." 
+            [(ngModel)]="searchTerm" 
+            aria-label="Enter a country to search for" 
+            (keydown.enter)="goToCountriesList()">
+        <button mat-button (click)="goToCountriesList()" aria-label="Search for Countries">Search</button>
+        <!-- tabIndex="0" -->
 
-        <a mat-button routerLink="/country-list">All Countries</a>
-        <a mat-button routerLink="/contact">Contact</a>
-    </div>
+        <a mat-button routerLink="/country-list" aria-label="Go to all countries screen">All Countries</a>
+        <a mat-button routerLink="/contact" aria-label="Go to the contact form">Contact</a>
+    </div>          
 
 </mat-toolbar>
