@@ -7,8 +7,7 @@
     <span class="navbar-spacer"></span>
     
     <div class="tabs">
-        <input type="text" id="search" name="search" placeholder="Search..." [(ngModel)]="searchTerm" aria-label="search">
-        <!-- TODO: with keydown event (eslint) -->
+        <input type="text" id="search" name="search" placeholder="Search..." [(ngModel)]="searchTerm" aria-label="search" (keydown.enter)="goToCountriesList()">
         <button mat-button (click)="goToCountriesList()" tabindex="0">Search</button>
 
         <a mat-button routerLink="/country-list">All Countries</a>
