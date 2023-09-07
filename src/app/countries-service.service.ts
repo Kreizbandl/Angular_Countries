@@ -32,7 +32,7 @@ export class CountriesServiceService {
   }
 
   getCountriesBySearch(searchTerm: string): Country[]{
-    let foundCountries: Country[] = [];
+    const foundCountries: Country[] = [];
     this.countries.forEach(country => {
       if(country.name.common.includes(searchTerm)){
         foundCountries.push(country);
