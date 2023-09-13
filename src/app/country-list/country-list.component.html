@@ -1,12 +1,15 @@
+<!-- Überschrift -->
 <h1>{{ showCountries }}</h1>
 
 <div *ngIf="countries">
-
     <div fxLayout="row wrap">
+        <!-- Schleife durch jedes Land der Liste -->
         <div *ngFor="let country of countries" >
-            
+            <!-- Material Card für jedes Land -->
             <mat-card>
-                <a routerLink="/country-detail" [queryParams]="{ data: country.name.common }" attr.aria-label="Got to detail screen of {{ country.name.common }}">
+                <!-- Link zur Detailansicht des Landes mit Label -->
+                <a routerLink="/country-detail" [queryParams]="{ data: country.name.common }" 
+                    attr.aria-label="Got to detail screen of {{ country.name.common }}">
                     <mat-card-header>
                         <mat-card-title>{{ country.name.common }}</mat-card-title>
                     </mat-card-header>
@@ -15,8 +18,7 @@
                     </mat-card-content>
                 </a>
             </mat-card>
-            
         </div>
     </div>
-
 </div>
+

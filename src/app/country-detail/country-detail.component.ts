@@ -19,9 +19,11 @@ export class CountryDetailComponent implements OnInit{
   ){}
 
   ngOnInit(): void{
+    /* Reagiert auf Änderungen des empfangenen Ländernamens */
     this.route.queryParams.subscribe(params => {
       this.receivedCountryName = params['data'];
     })
+    /* Holt Informationen zum gesuchten Land */
     this.country = this.service.getCountryByName(this.receivedCountryName);
   }
 

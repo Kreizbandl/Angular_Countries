@@ -7,13 +7,18 @@ import { CountryDetailComponent } from './country-detail/country-detail.componen
 
 
 const routes: Routes = [
+  /* Weiterleitung der leeren URL auf die Startseite */
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  /* Routen zur jeweiligen Seite */
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'country-list', component: CountryListComponent },
+  /* Route zur Filterung der Länderliste */
   { path: 'country-list/:searchTerm', component: CountryListComponent },
+  /* Detailansicht für ein bestimmtes Land */
   { path: 'country-detail', component: CountryDetailComponent },
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

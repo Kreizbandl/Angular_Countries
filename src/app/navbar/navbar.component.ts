@@ -17,9 +17,9 @@ export class NavbarComponent {
     private service: CountriesServiceService
   ){}
 
+  /* Navigation zur Länderliste mit dem eingegebenen Suchbegriff */
   goToCountriesList(): void {
     if(this.searchTerm !== ''){
-      // TODO precheck if countries exist -> avoid empty page
       this.router.navigate(['/country-list', this.searchTerm]);
     }
   }

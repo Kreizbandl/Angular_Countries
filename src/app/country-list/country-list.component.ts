@@ -20,26 +20,26 @@ export class CountryListComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
-    //subscribe to changes of country to search for
+    /* Reagiert auf Änderungen des Suchbegriffs */
     this.router.params.subscribe(params => {
       this.searchTerm = params['searchTerm'];
 
-      //if no search term -> load all countries
+      /* Lädt alle Länder, wenn kein Suchbegriff vorhanden */
       if(this.searchTerm === null || this.searchTerm === undefined){
         this.showCountries = 'All Countries';
         this.countries = this.service.countries;
       }else{
-        //only get searched countries
+        /* Lädt nur gesuchte Länder */
         this.countries = this.service.getCountriesBySearch(this.searchTerm);
+
+        /* Zeigt Fehlermeldung, wenn keine Länder gefunden wurden */
         if(this.countries.length === 0){
-          //error message 
           this.showCountries = 'Nothing found for ' + this.searchTerm;
         }else{
-          //found items
+          /* Zeigt gefundene Länder */
           this.showCountries = 'Found Countries for ' + this.searchTerm;
         }
       }
-
     });
   }
 

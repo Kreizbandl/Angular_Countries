@@ -1,25 +1,24 @@
 <mat-toolbar>
-    
+    <!-- Logo-Link mit beschreibendem Label und alternativem Text -->
     <a routerLink="/home" aria-label="Go to home screen">
         <img alt="Logo of the website all-countries" src="assets/logo.png">    
     </a>
-    
-    <span class="navbar-spacer"></span>
-    
-    <div class="tabs">
-        <input 
-            type="text" 
-            id="search" 
-            name="search" 
-            placeholder="Search..." 
-            [(ngModel)]="searchTerm" 
-            aria-label="Enter a country to search for" 
-            (keydown.enter)="goToCountriesList()">
-        <button mat-button (click)="goToCountriesList()" aria-label="Search for Countries">Search</button>
-        <!-- tabIndex="0" -->
 
+    <!-- Platzhalter für die Navigation -->
+    <span class="navbar-spacer"></span>
+
+    <div class="tabs">
+        <!-- Eingabefeld für die Suche mit beschreibendem Label und auslösbar über die Enter-Taste -->
+        <input type="text" id="search" name="search" placeholder="Search..." [(ngModel)]="searchTerm" 
+            aria-label="Enter a country to search for" (keydown.enter)="goToCountriesList()">
+        <!-- Button zum Auslösen der Suche mit beschreibendem Label -->
+        <button mat-button (click)="goToCountriesList()" aria-label="Search for Countries">Search</button>
+        
+        <!-- Link zur Liste alle Länder mit beschreibendem Label -->
         <a mat-button routerLink="/country-list" aria-label="Go to all countries screen">All Countries</a>
+        <!-- Link zum Kontaktformular mit beschreibendem Label -->
         <a mat-button routerLink="/contact" aria-label="Go to the contact form">Contact</a>
     </div>          
-
 </mat-toolbar>
+
+
