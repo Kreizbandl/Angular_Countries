@@ -18,6 +18,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { A11yModule } from '@angular/cdk/a11y';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { FormsModule } from '@angular/forms';
     MatSelectModule,
     MatInputModule,
     FormsModule,
+    A11yModule
   ],
   providers: [],
   bootstrap: [AppComponent]

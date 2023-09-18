@@ -34,7 +34,7 @@ describe('Navigationstests', () => {
         // fockus auf Logo-Link
         cy.get('#home-link').focus();
         cy.focused().should('have.id', 'home-link');
-
+        
         // Drücken der Tabulatortaste
         cy.get('#search').trigger('keydown', { keyCode: 9 });
 

@@ -16,7 +16,7 @@ export class ContactComponent implements AfterViewInit{
     message: ''
   };
   /* Zustandvariable für Anzeigemodus */
-  isFormSubmitted: boolean = false;
+  isFormSubmitted = false;
 
   constructor( private router: Router ){
     /* Überwacht Router-Ereignisse, für Fokus auf erstes Element und Zurücksetzten des Formulars */

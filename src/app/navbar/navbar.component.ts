@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   
   searchTerm = '';
-  isLinkActive: boolean = false;
+  isLinkActive = false;
 
   constructor(
     private router: Router

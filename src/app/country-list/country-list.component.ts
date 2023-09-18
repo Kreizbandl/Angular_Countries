@@ -1,8 +1,7 @@
-import { AfterViewInit, Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CountriesServiceService } from '../countries.service';
-import { ActivatedRoute, NavigationEnd, Route, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Country } from '../country.interface';
-import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-country-list',
@@ -21,16 +20,16 @@ export class CountryListComponent implements OnInit, AfterViewInit{
   ){}
 
   ngAfterViewInit() {
-    this.setFocusOnFirstElement();
+    /* this.setFocusOnFirstElement(); */
   }
   
   /* Setzt Fokus nach Initialisierung der Ansicht auf erstes Element */
-  private setFocusOnFirstElement(){
+  /* private setFocusOnFirstElement(){
     const testFocusButton: HTMLElement | null = document.querySelector('#country-0');
     if (testFocusButton) {
       testFocusButton.focus();
     }
-  }
+  } */
 
   ngOnInit(): void {
     /* Reagiert auf Änderungen des Suchbegriffs */
