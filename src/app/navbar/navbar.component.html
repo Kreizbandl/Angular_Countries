@@ -15,7 +15,8 @@
         <button mat-button (click)="goToCountriesList()" aria-label="Search for Countries">Search</button>
         
         <!-- Link zur Liste alle Länder mit beschreibendem Label -->
-        <a mat-button routerLink="/country-list" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" aria-label="Go to all countries screen">All Countries</a>
+        <a mat-button routerLink="/country-list" routerLinkActive="active-link" 
+            [routerLinkActiveOptions]="{ exact: true }" aria-label="Go to all countries screen">All Countries</a>
         <!-- Link zum Kontaktformular mit beschreibendem Label -->
         <a mat-button routerLink="/contact" routerLinkActive="active-link" aria-label="Go to the contact form">Contact</a>
     </div>          

@@ -18,18 +18,25 @@ export class ContactComponent implements AfterViewInit{
   /* Zustandvariable für Anzeigemodus */
   isFormSubmitted: boolean = false;
 
-  constructor(
-    private router: Router
-  ){
+  constructor( private router: Router ){
     /* Überwacht Router-Ereignisse, für Fokus auf erstes Element und Zurücksetzten des Formulars */
     this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe(() => {
       this.setFocusOnFirstElement();
     });
   }
+  
+  /* Methode zum setzten des Fokus auf das erste Element */
+  private setFocusOnFirstElement(){
+    const testFocusButton: HTMLElement | null = document.querySelector('#name');
+    if (testFocusButton) {
+      testFocusButton.focus();
+    }
+  }
 
   submit(): void{
     this.isFormSubmitted = true;
     console.log(JSON.stringify(this.formData));
+    /* Weiterverarbeitung der Daten... */
   }
 
   /* Setzt Fokus nach Initialisierung der Ansicht auf erstes Element */
@@ -38,11 +45,4 @@ export class ContactComponent implements AfterViewInit{
     this.isFormSubmitted = false;
   }
 
-  /* Methode zum setzten des Fokus auf das erste Element */
-  private setFocusOnFirstElement(){
-    const testFocusButton: HTMLElement | null = document.querySelector('#name');
-    if (testFocusButton) {
-      testFocusButton.focus();
-    }
-  }
 }

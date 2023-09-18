@@ -10,7 +10,6 @@ export class NavbarComponent {
   
   searchTerm = '';
   isLinkActive: boolean = false;
-  isButtonActive: boolean = false;
 
   constructor(
     private router: Router
