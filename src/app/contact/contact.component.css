@@ -7,9 +7,6 @@ form {
 .name, .email, .message {
     min-width: 400px; 
 }
-/* .message {
-    height: 100px;
-} */
 .mat-form-field.message textarea {
     height: 200px;
   }

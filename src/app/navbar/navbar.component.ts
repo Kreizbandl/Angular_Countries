@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CountriesServiceService } from '../countries-service.service';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',

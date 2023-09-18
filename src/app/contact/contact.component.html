@@ -24,6 +24,7 @@
   <!-- Button zum Absenden des Formulars mit beschreibendem Label -->
   <button mat-raised-button type="submit" aria-label="Submit" [disabled]="!feedbackForm.valid">Submit</button>
 </form>
+<!-- Nachricht nach Absenden des Formulars -->
 <div *ngIf="isFormSubmitted">
   <p>Thank you for your message!</p>
 </div>

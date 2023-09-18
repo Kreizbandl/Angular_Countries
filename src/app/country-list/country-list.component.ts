@@ -18,19 +18,13 @@ export class CountryListComponent implements OnInit, AfterViewInit{
   constructor(
     private activatedRouter: ActivatedRoute, 
     private service: CountriesServiceService,
-    /* private elementRef: ElementRef, 
-    private renderer: Renderer2,
-    private router: Router */
-  ){
-    /* this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe(() => {
-      this.setFocusOnFirstElement();
-    }); */
-  }
+  ){}
 
   ngAfterViewInit() {
     this.setFocusOnFirstElement();
   }
-
+  
+  /* Setzt Fokus nach Initialisierung der Ansicht auf erstes Element */
   private setFocusOnFirstElement(){
     const testFocusButton: HTMLElement | null = document.querySelector('#country-0');
     if (testFocusButton) {
