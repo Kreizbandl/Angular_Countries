@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
-import { CountriesServiceService } from '../countries-service.service';
+import { CountriesServiceService } from '../countries.service';
 import { ActivatedRoute, NavigationEnd, Route, Router } from '@angular/router';
 import { Country } from '../country.interface';
 import { filter } from 'rxjs';
