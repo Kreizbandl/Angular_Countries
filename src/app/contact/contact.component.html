@@ -2,26 +2,28 @@
 <h1>Feedback Form</h1>
 
 <!-- Feedback Formular-->
-<form (ngSubmit)="submit()">
+<form *ngIf="!isFormSubmitted" (ngSubmit)="submit()" #feedbackForm="ngForm">
   <!-- Eingabefeld für den Namen mit beschreibendem Label -->
-  <mat-form-field>
+  <mat-form-field class="name">
     <mat-label for="name">Name: </mat-label>
     <input matInput type="text" id="name" name="name" 
-      [(ngModel)]="formData.name" aria-label="Enter your name">
+      [(ngModel)]="formData.name" aria-label="Enter your name" required #name="ngModel">
   </mat-form-field>
   <!-- Eingabefeld für die Email mit beschreibendem Label -->
-  <mat-form-field>
+  <mat-form-field class="email">
     <mat-label for="email">Email: </mat-label>
     <input matInput type="text" id="email" name="email" 
-      [(ngModel)]="formData.email" aria-label="Enter your email">
+      [(ngModel)]="formData.email" aria-label="Enter your email" required #email="ngModel">
   </mat-form-field>
   <!-- Textbereich für die Nachricht mit beschreibendem Label -->
-  <mat-form-field>
+  <mat-form-field class="message">
     <mat-label for="message">Message: </mat-label>
-    <textarea matInput type="text" id="message" name="message" 
-      [(ngModel)]="formData.message" aria-label="Enter a message"></textarea>
+    <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="10" type="text" id="message" name="message" 
+      [(ngModel)]="formData.message" aria-label="Enter a message" required #message="ngModel"></textarea>
   </mat-form-field>
   <!-- Button zum Absenden des Formulars mit beschreibendem Label -->
-  <button mat-raised-button type="submit" aria-label="Submit">Submit</button>
+  <button mat-raised-button type="submit" aria-label="Submit" [disabled]="!feedbackForm.valid">Submit</button>
 </form>
-
+<div *ngIf="isFormSubmitted">
+  <p>Thank you for your message!</p>
+</div>

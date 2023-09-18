@@ -1,27 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { CountriesServiceService } from '../countries-service.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Route, Router } from '@angular/router';
 import { Country } from '../country.interface';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-country-list',
   templateUrl: './country-list.component.html',
   styleUrls: ['./country-list.component.css']
 })
-export class CountryListComponent implements OnInit{
+export class CountryListComponent implements OnInit, AfterViewInit{
   
   countries: Country[] = [];
   searchTerm: string | null | undefined = null;
   showCountries = '';
 
   constructor(
-    private router: ActivatedRoute, 
-    private service: CountriesServiceService
-  ){}
+    private activatedRouter: ActivatedRoute, 
+    private service: CountriesServiceService,
+    /* private elementRef: ElementRef, 
+    private renderer: Renderer2,
+    private router: Router */
+  ){
+    /* this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe(() => {
+      this.setFocusOnFirstElement();
+    }); */
+  }
+
+  ngAfterViewInit() {
+    this.setFocusOnFirstElement();
+  }
+
+  private setFocusOnFirstElement(){
+    const testFocusButton: HTMLElement | null = document.querySelector('#country-0');
+    if (testFocusButton) {
+      testFocusButton.focus();
+    }
+  }
 
   ngOnInit(): void {
     /* Reagiert auf Änderungen des Suchbegriffs */
-    this.router.params.subscribe(params => {
+    this.activatedRouter.params.subscribe(params => {
       this.searchTerm = params['searchTerm'];
 
       /* Lädt alle Länder, wenn kein Suchbegriff vorhanden */
@@ -34,10 +53,10 @@ export class CountryListComponent implements OnInit{
 
         /* Zeigt Fehlermeldung, wenn keine Länder gefunden wurden */
         if(this.countries.length === 0){
-          this.showCountries = 'Nothing found for ' + this.searchTerm;
+          this.showCountries = 'Nothing found for "' + this.searchTerm + '"';
         }else{
           /* Zeigt gefundene Länder */
-          this.showCountries = 'Found Countries for ' + this.searchTerm;
+          this.showCountries = 'Found Countries for "' + this.searchTerm + '"';
         }
       }
     });

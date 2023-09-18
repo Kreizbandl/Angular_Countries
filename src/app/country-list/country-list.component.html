@@ -4,11 +4,11 @@
 <div *ngIf="countries">
     <div fxLayout="row wrap">
         <!-- Schleife durch jedes Land der Liste -->
-        <div *ngFor="let country of countries" >
+        <div *ngFor="let country of countries; let i = index">
             <!-- Material Card für jedes Land -->
             <mat-card>
                 <!-- Link zur Detailansicht des Landes mit Label -->
-                <a routerLink="/country-detail" [queryParams]="{ data: country.name.common }" 
+                <a routerLink="/country-detail" [queryParams]="{ data: country.name.common }" [attr.id]="'country-' + i"
                     attr.aria-label="Got to detail screen of {{ country.name.common }}">
                     <mat-card-header>
                         <mat-card-title>{{ country.name.common }}</mat-card-title>

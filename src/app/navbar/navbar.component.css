@@ -14,3 +14,6 @@ mat-toolbar{
 label {
     font-size: medium;
 }
+.active-link {
+    background-color: #C1C1C1;
+}
