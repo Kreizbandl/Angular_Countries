@@ -8,17 +8,16 @@
             <!-- Material Card für jedes Land -->
             <mat-card>
                 <!-- Link zur Detailansicht des Landes mit Label -->
-                <a routerLink="/country-detail" [queryParams]="{ data: country.name.common }" [attr.id]="'country-' + i"
+                <a routerLink="/country-detail" [queryParams]="{ data: country.name.common }"
                     attr.aria-label="Go to detail screen of {{ country.name.common }}" cdkFocusInitial>
                     <mat-card-header>
                         <mat-card-title>{{ country.name.common }}</mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
-                        <img alt="{{ country.flags.alt }}" src="{{ country.flags.png }}">    
+                        <img alt="{{ country.flags.alt }}" src="{{ country.flags.png }}">
                     </mat-card-content>
                 </a>
             </mat-card>
         </div>
     </div>
 </div>
-
